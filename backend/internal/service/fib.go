@@ -1,6 +1,11 @@
 package service
 
+import "fmt"
+
 func Fib(n int) (int64,error) {
+	if n <= 0 {
+		return 0, fmt.Errorf("bad param")
+	}
 	if n == 1 || n == 2 {
 		return 1,nil
 	} else {
