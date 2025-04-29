@@ -10,7 +10,6 @@ import (
 
 func main() {
 	http.HandleFunc("/fib", handler.FibHandler)
-	http.HandleFunc("/", handler.HelloHandler)
 
 	fmt.Println("Server is running on :8080...")
 	if err:= http.ListenAndServe(":8080", nil); err != nil {
