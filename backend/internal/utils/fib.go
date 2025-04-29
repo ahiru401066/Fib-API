@@ -1,4 +1,4 @@
-package service
+package utils
 
 func Fib(n int) (int64,error) {
 	if n == 1 || n == 2 {
