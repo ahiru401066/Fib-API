@@ -1,11 +1,13 @@
 package handler
 
 import (
-	"fmt"
+	"encoding/json"
 	"net/http"
 	"strconv"
 
 	"fib_api/internal/utils"
+	"fib_api/internal/service"
+	"fib_api/internal/model"
 )
 
 func FibHandler(w http.ResponseWriter, r *http.Request) {
@@ -33,9 +35,16 @@ func FibHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	
 	// 数値処理
-	ans,err := utils.Fib(n)
+	ans,err := service.Fib(n)
 	if err != nil {
-		fmt.Fprint(w, "err")
+		utils.ResponseError(w, http.StatusInternalServerError, "ServerError")
+		return 
 	}
-	fmt.Fprint(w, ans)
+
+	// リクエスト処理
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(model.ResultResponse{
+		Result: ans,
+	})
 }
