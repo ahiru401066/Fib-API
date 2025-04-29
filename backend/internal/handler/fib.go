@@ -29,15 +29,11 @@ func FibHandler(w http.ResponseWriter, r *http.Request) {
 		utils.ResponseError(w, http.StatusBadRequest, "BadRequest")
 		return 
 	}
-	if n <= 0 {
-		utils.ResponseError(w, http.StatusBadRequest, "BadRequest")
-		return 
-	}
 	
 	// 数値処理
 	ans,err := service.Fib(n)
 	if err != nil {
-		utils.ResponseError(w, http.StatusInternalServerError, "ServerError")
+		utils.ResponseError(w, http.StatusBadRequest, "BadRequest")
 		return 
 	}
 
