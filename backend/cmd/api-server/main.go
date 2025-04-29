@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"fib_api/internal/handler"
@@ -13,6 +14,6 @@ func main() {
 
 	fmt.Println("Server is running on :8080...")
 	if err:= http.ListenAndServe(":8080", nil); err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 }
