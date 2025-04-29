@@ -3,7 +3,7 @@ services:
     build: ./
     container_name: fib-go-container
     volumes:
-    - ./:/app
+    - ./backend:/backend
     ports:
     - "8080:8080"
     tty: true
