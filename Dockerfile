@@ -1,8 +1,8 @@
 FROM golang:1.24-alpine
 
-WORKDIR /app
+WORKDIR /backend
 
-COPY go.mod ./
+COPY ./backend/go.mod ./
 RUN go mod download
 
-WORKDIR /app/cmd/api-server
+WORKDIR /backend/cmd/api-server
