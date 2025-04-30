@@ -1,17 +1,22 @@
 package service
 
-import "fmt"
+import (
+	"fmt"
+	"math/big"
+) 
 
-func Fib(n int) (int64,error) {
+func Fib(n int) (*big.Int ,error) {
 	if n <= 0 {
-		return 0, fmt.Errorf("bad param")
+		return new(big.Int), fmt.Errorf("bad param") // 0とエラーを返す
 	}
 	if n == 1 || n == 2 {
-		return 1,nil
+		return big.NewInt(1),nil
 	} else {
-		var a, b int64 = 1,1 
+		a := big.NewInt(1) 
+		b := big.NewInt(1) 
 		for i:= 3; i <= n; i++ {
-			a, b = b, a+b
+			next := new(big.Int).Add(a,b)
+			a, b = b, next
 		}
 		return b, nil
 	}
