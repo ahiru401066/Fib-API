@@ -16,24 +16,27 @@ https://fib-api-spds.onrender.com/
 ### ディレクトリ構成
 <details><summary>構成を見る</summary>
 <pre>
+.
 ├── backend
 │   ├── cmd
 │   │   └── api-server
 │   │       └── main.go
-│   ├── Dockerfile     本番環境用
+│   ├── Dockerfile             本番環境用
 │   ├── go.mod
 │   └── internal
 │       ├── handler
+│       │   ├── fib_test.go    テストコード
 │       │   └── fib.go
 │       ├── model
 │       │   ├── error.go
 │       │   └── fib.go
 │       ├── service
+│       │   ├── fib_test.go　　テストコード
 │       │   └── fib.go
 │       └── utils
 │           └── error.go
-├── docker-compose.yml     開発環境用
-├── Dockerfile             開発環境用
+├── docker-compose.yml         開発環境用
+├── Dockerfile　　　　　　　　　　開発環境用
 └── README.md
 </pre>
 </details>
