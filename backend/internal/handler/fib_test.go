@@ -20,7 +20,7 @@ func TestFibHandler(t *testing.T) {
 			method:     "GET",
 			url:        "/fib?n=5",
 			wantStatus: http.StatusOK,
-			wantBody:   `"result":5`,
+			wantBody:   `"result":"5"`,
 		},
 		{
 			name:       "invalid method",
