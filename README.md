@@ -1,4 +1,4 @@
-# Fib-API
+# Fib_api
 2025.04 ~ フィボナッチ数を返すAPIサーバーを作成
 
 ### 処理概要説明
@@ -11,7 +11,8 @@
 
 
 #### エンドポイントURL
-https://fib-api-spds.onrender.com/
+https://fib-api-spds.onrender.com/  
+renderの無料枠を利用しているため最初のアクセスは時間がかかります。
 
 
 ### ディレクトリ構成
